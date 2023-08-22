@@ -22,6 +22,7 @@ label2.pack()
 entry2 = tk.Entry(width=20)
 entry2.pack()
 
+
 #Calculate
 def calculated_button():
     try:
@@ -33,18 +34,23 @@ def calculated_button():
         if BMI < 19:
             underweight_label = tk.Label(text=f"You are underweight.\nYour BMI : {BMI}")
             underweight_label.pack()
+            underweight_label.after(1000, lambda: underweight_label.destroy())
         elif 18.5 <= BMI <= 24.9:
             underweight_label = tk.Label(text=f"You are normalweight.\nYour BMI : {BMI}")
             underweight_label.pack()
+            underweight_label.after(3000, lambda: underweight_label.destroy())
         elif 25 <= BMI <= 29.9:
             underweight_label = tk.Label(text=f"You are overweight.\nYour BMI : {BMI}")
             underweight_label.pack()
+            underweight_label.after(3000, lambda: underweight_label.destroy())
         elif 30 <= BMI <= 39.9:
             underweight_label = tk.Label(text=f"You are obesity.\nYour BMI : {BMI}")
             underweight_label.pack()
+            underweight_label.after(3000, lambda: underweight_label.destroy())
         else:
             underweight_label = tk.Label(text=f"You are morbid obesity.\nYour BMI : {BMI}")
             underweight_label.pack()
+            underweight_label.after(3000, lambda: underweight_label.destroy())
     except:
         label_Error = tk.Label(text="INVALID VALUE !!")
         label_Error.pack()
